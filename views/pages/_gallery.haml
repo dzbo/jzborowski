@@ -30,7 +30,7 @@
                 { file: '16.jpg', title: 'Martwa natura z owocami', description: '45/55 cm, olej' }]
 
     - images.each do |image|
-      %a.col-md-4.wow.fadeIn.post-item{ :href => "img/gallery/#{image[:file]}", :"data-lightbox" => "gallery", :"data-title" => image[:title] }
+      %a.col-md-4.post-item{ :href => "img/gallery/#{image[:file]}", :"data-lightbox" => "gallery", :"data-title" => image[:title] }
         .post
           .media
             %img.img-responsive{:src => "img/gallery/#{image[:file]}"}/

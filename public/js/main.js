@@ -5,8 +5,6 @@ $(window).load(function() {
   },1250);
 });
 
-new WOW().init();
-
 $(function(){
 
   $(".load-more").on("click", function(e){
