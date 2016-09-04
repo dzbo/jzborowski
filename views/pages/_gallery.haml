@@ -1,0 +1,39 @@
+#posts.container
+  .posts-masonry
+    - images = [{ file: '29.jpg', title: 'Porto Venere', description: '140/120 cm, olej' }, |
+                { file: '23.jpg', title: 'Tańcząca baletnica', description: '120/140 cm, olej' }, |
+                { file: '22.jpg', title: 'Zaczarowana księniczka', description: '45/55 cm, olej' }, |
+                { file: '20.jpg', title: 'Skrzypek na dachu', description: '100/80 cm, olej' }, |
+                { file: '18.jpg', title: 'Tajemniczy Pino', description: '27/33 cm, olej' }, |
+                { file: '13.jpg', title: 'Mój karnawał', description: '38/41 cm, olej' }, |
+                { file: '09.jpg', title: 'Wszystko dla Ciebie', description: '40/40 cm, olej' }, |
+                { file: '08.jpg', title: 'Spełnione marzenia', description: '30/40 cm, olej' }, |
+                { file: '15.jpg', title: 'Trio (obraz zaginiony)', description: '100/80 cm, olej' }, |
+                { file: '07.jpg', title: 'Na spacerze', description: '100/70 cm, olej' }, |
+                { file: '06.jpg', title: 'Pracownia malarza', description: '160/140 cm, olej' }, |
+                { file: '11.jpg', title: 'Urodziny', description: '100/80 cm, olej' }, |
+                { file: '05.jpg', title: 'Jałmużnik', description: '100/80 cm, olej' }, |
+                { file: '12.jpg', title: 'Królewskie zaloty', description: '20/30 cm, olej' }, |
+                { file: '17.jpg', title: 'Droga do domu', description: '63/47 cm, olej' }, |
+                { file: '19.jpg', title: 'Wenecja', description: '50/65 cm, olej' }, |
+                { file: '04.jpg', title: 'Kreta', description: '120/80 cm, olej' }, |
+                { file: '03.jpg', title: 'Hucisko', description: '60/45 cm, olej' }, |
+                { file: '14.jpg', title: 'Pejzaż', description: '90/65 cm, olej' }, |
+                { file: '10.jpg', title: 'Wczesna wiosna', description: '60/80 cm, olej' }, |
+                { file: '01.jpg', title: 'Martwa natura z wachlarzem', description: '27/33 cm, olej' }, |
+                { file: '02.jpg', title: 'Maki', description: '60/70 cm, olej' }, |
+                { file: '27.jpg', title: 'Zima w górach', description: '30/25 cm, olej' }, |
+                { file: '26.jpg', title: 'Pejzaż', description: '30/25 cm, olej' }, |
+                { file: '25.jpg', title: 'Kosciółek w Istebnej', description: '30/40 cm, olej' }, |
+                { file: '24.jpg', title: 'Martwa natura', description: '35/40 cm, olej' }, |
+                { file: '21.jpg', title: 'Portret starca', description: '30/40 cm, olej' }, |
+                { file: '16.jpg', title: 'Martwa natura z owocami', description: '45/55 cm, olej' }]
+
+    - images.each do |image|
+      %a.col-md-4.wow.fadeIn.post-item{ :href => "img/gallery/#{image[:file]}", :"data-lightbox" => "gallery", :"data-title" => image[:title] }
+        .post
+          .media
+            %img.img-responsive{:src => "img/gallery/#{image[:file]}"}/
+          .caption.text-center
+            .post-title= image[:title]
+            %span.post-date= image[:description]

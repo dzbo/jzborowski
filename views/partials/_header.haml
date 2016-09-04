@@ -1,0 +1,26 @@
+#header
+  .top
+    %a.brand{:href => "#"}
+      Jerzy Zborowski
+      %span Malarstwo
+  %nav.navbar.navbar-ada{:role => "navigation"}
+    .navbar-header
+      %button.navbar-toggle{"data-target" => "#navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+    #navbar-collapse-1.collapse.navbar-collapse.navbar-ex1-collapse
+      %ul.nav.navbar-nav
+        %li.active
+          %a{:href => "#home", :role =>"tab", :"data-toggle" => "tab"}
+            Start
+        %li
+          %a{:href => "#about", :role =>"tab", :"data-toggle" => "tab"}
+            O mnie
+        %li
+          %a{:href => "#gallery", :role =>"tab", :"data-toggle" => "tab"}
+            Galeria
+        %li
+          %a{:href => "#contact", :role =>"tab", :"data-toggle" => "tab"}
+            Kontakt

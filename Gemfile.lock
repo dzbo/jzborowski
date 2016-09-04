@@ -1,13 +1,33 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    rack (2.0.1)
+    daemons (1.2.4)
+    eventmachine (1.2.0.1)
+    haml (4.0.7)
+      tilt
+    rack (1.6.4)
+    rack-protection (1.5.3)
+      rack
+    shotgun (0.9.1)
+      rack (>= 1.0)
+    sinatra (1.4.7)
+      rack (~> 1.5)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+    thin (1.7.0)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0, >= 1.0.4)
+      rack (>= 1, < 3)
+    tilt (2.0.5)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  rack
+  haml
+  shotgun
+  sinatra
+  thin
 
 RUBY VERSION
    ruby 2.3.1p112

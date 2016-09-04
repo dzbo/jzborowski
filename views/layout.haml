@@ -1,0 +1,40 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "Ada", :name => "description"}/
+    %meta{:content => "Dominik Zborowski", :name => "author"}/
+    %link{:href => "favicon.ico", :rel => "shortcut icon"}/
+    %title Jerzy Zborowski - Malarstwo
+    / Fonts
+    %link{:href => "https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700italic,800,800italic,700,600italic", :rel => "stylesheet"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Merriweather", :rel => "stylesheet"}/
+    / Styles
+    %link{:href => "css/style.css", :rel => "stylesheet"}/
+    / HTML5 shiv for IE8 support
+    /[if lt IE 9]
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  %body
+    .loading
+
+    = haml :"partials/_header"
+
+    = yield
+
+    = haml :"partials/_footer"
+
+    / Vendor Scripts
+    %script{:src => "js/jquery-1.11.3.min.js"}
+    %script{:src => "js/bootstrap.js"}
+    %script{:src => "js/smoothScroll.js"}
+    %script{:src => "js/wow.min.js"}
+    %script{:src => "js/imagesloaded.pkgd.js"}
+    %script{:src => "js/masonry.pkgd.min.js"}
+    %script{:src => "js/lightbox.js"}
+    / Theme Scripts
+    %script{:src => "js/main.js"}
+    / Google Map
+    %script{:src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyAhKqx4POMN98s08SIrQqQvMfutJ2t4GhQ", :type => "text/javascript"}
