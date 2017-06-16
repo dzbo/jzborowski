@@ -43,10 +43,10 @@
     / Zenloop
     %script{:id => "zl-website-overlay-loader", :async => true, :src => "https://zenloop-website-overlay-production.s3.amazonaws.com/loader/zenloop.load.min.js?survey=cHM2c0hmY0VMRGZTYkh0Y3YzWDZuRjNXcjJHTGcydWZsaUFCK1llR25Pcz0%3D"}
 
-    :javascript
+    -#:javascript
       var Zenloop = window.Zenloop || {};
-      Zenloop.identity = {
-        email: 'test@example.com',
+      Zenloop.recipient = {
+        email: 'test1@example.com',
         first_name: 'John',
         last_name: 'Doe',
         properties: {
