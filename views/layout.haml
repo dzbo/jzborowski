@@ -39,3 +39,18 @@
 
       ga('create', 'UA-1631582-16', 'auto');
       ga('send', 'pageview');
+
+    / Zenloop
+    %script{:id => "zl-website-overlay-loader", :async: => true,  :src => "https://zenloop-website-overlay-production.s3.amazonaws.com/loader/zenloop.load.min.js?survey=cHM2c0hmY0VMRGZTYkh0Y3YzWDZuRjNXcjJHTGcydWZsaUFCK1llR25Pcz0%3D"}
+
+    :javascript
+      var Zenloop = window.Zenloop || {};
+      Zenloop.recipient = {
+        email: 'test@example.com',
+        first_name: 'John',
+        last_name: 'Doe',
+        properties: {
+          color: 'red',
+          height: 100
+        }
+      };
