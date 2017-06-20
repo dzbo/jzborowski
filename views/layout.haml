@@ -49,7 +49,8 @@
     %script{:id => "zl-website-overlay-loader", :async => true, :src => "https://zenloop-website-overlay-staging.s3.amazonaws.com/loader/zenloop.load.min.js?survey=OFFiQ2xSY1FUNFBXcFllUzBzemd2TkJTUGZha0ovd1dXdFlEWWRGdDdWUT0%3D"}
 
     :javascript
-      window.Zenloop.throttlingUnit = 'seconds';
+      var Zenloop = window.Zenloop || {};
+      Zenloop.throttlingUnit = 'seconds';
 
     -#:javascript
       var Zenloop = window.Zenloop || {};
