@@ -7,3 +7,7 @@
 * Install gems `bundle install`
 * Launch app `shotgun`
 * Open browser with `http://localhost:9393/`
+
+## Testing
+
+@TODO
