@@ -5,7 +5,6 @@
 - [Nuxt 3](https://v3.nuxtjs.org)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Vite](https://vitejs.dev/)
-- [Vitest](https://vitest.dev/)
 
 ## Setup
 
