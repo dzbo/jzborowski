@@ -1,13 +1,40 @@
 # Jerzy Zborowski - Home page
 
+## Stack
+
+- [Nuxt 3](https://v3.nuxtjs.org)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev/)
+- [Vitest](https://vitest.dev/)
+
 ## Setup
 
-* Clone repo `git clone this_repo`
-* Enter dir `cd this_repo`
-* Install gems `bundle install`
-* Launch app `shotgun`
-* Open browser with `http://localhost:9393/`
+Make sure to install the dependencies:
 
-## Testing
+```bash
+npm install
+```
 
-@TODO
+## Development Server
+
+Start the development server on http://localhost:3000
+
+```bash
+npm run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+Locally preview production build:
+
+```bash
+npm run preview
+```
+
+Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
