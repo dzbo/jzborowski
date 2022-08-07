@@ -37,3 +37,11 @@ npm run preview
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+
+## Lint
+
+Lint check for formatting (Prettier), Typescript and Eslint.
+
+```bash
+npm run lint
+```
