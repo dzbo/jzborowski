@@ -4,7 +4,9 @@ on:
   pull_request:
     branches:
       - master
-
+  push:
+    branches:
+      - master
 env:
   cache_version: v1
   node-version: 16.16.0
