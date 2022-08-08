@@ -10,4 +10,5 @@ export default defineNuxtConfig({
   tailwindcss: {
     cssPath: '~/assets/styles/main.scss',
   },
+  target: 'static',
 })
