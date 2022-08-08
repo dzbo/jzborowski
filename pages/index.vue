@@ -11,7 +11,7 @@ const numberOfImages = 37
         class="relative sm:col-span-6 lg:col-span-5 rounded-l-xl w-[100%] h-[500px] sm:h-[600px] lg:h-[100%]"
       >
         <div
-          class="rounded-l-xl bg-no-repeat bg-cover bg-[url('~/assets/img/avatar.jpg')] grayscale w-[100%] h-[500px] sm:h-[600px] lg:h-[100%]"
+          class="rounded-l-xl bg-no-repeat bg-cover bg-[url('img/avatar.jpg')] grayscale w-[100%] h-[500px] sm:h-[600px] lg:h-[100%]"
         ></div>
         <div
           class="absolute top-0 rounded-l-xl bg-gradient-to-r from-white dark:from-[color:var(--dark-card-background)] via-transparent dark:via-transparent to-white dark:to-[color:var(--dark-card-background)] w-[100%] h-[500px] sm:h-[600px] lg:h-[100%]"
@@ -84,7 +84,7 @@ const numberOfImages = 37
           v-for="index in numberOfImages"
           :key="index"
           class="w-full mb-6 rounded-md drop-shadow-lg"
-          :src="`/assets/img/gallery/${index}.jpg`"
+          :src="`img/gallery/${index}.jpg`"
         />
       </div>
     </section>

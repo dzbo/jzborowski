@@ -38,7 +38,7 @@ useHead({
   ],
   bodyAttrs: {
     class:
-      'bg-slate-50 bg-[url("~/assets/img/beams-components.png")] bg-no-repeat scrollbar dark:bg-[#011e26]',
+      'bg-slate-50 bg-[url("img/beams-components.png")] bg-no-repeat scrollbar dark:bg-[#011e26]',
   },
 })
 </script>
