@@ -12,4 +12,7 @@ export default defineNuxtConfig({
   },
   target: 'static',
   ssr: false,
+  nitro: {
+    serveStatic: true,
+  },
 })
