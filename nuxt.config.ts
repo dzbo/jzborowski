@@ -11,8 +11,5 @@ export default defineNuxtConfig({
     cssPath: '~/assets/styles/main.scss',
   },
   target: 'static',
-  router: {
-    base: '/jzborowski/',
-  },
   ssr: false,
 })
