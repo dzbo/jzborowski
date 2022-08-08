@@ -31,6 +31,10 @@ useHead({
       rel: 'stylesheet',
       href: 'https://fonts.googleapis.com/css2?family=Square+Peg&display=swap',
     },
+    {
+      rel: 'shortcut icon',
+      href: 'favicon.png',
+    },
   ],
   bodyAttrs: {
     class:
