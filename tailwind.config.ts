@@ -17,4 +17,5 @@ export default <Config>{
     'app.{js,ts,vue}',
     'content/**/*.md',
   ],
+  darkMode: 'class',
 }

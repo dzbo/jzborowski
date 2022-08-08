@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-.router-link-active {
-  @apply hover:border-b-slate-200 border-b-slate-200;
+:root {
+  --scrollbar-thumb: #d1d1d2;
+  --scrollbar-track: initial;
+  --dark-font-color-primary: #92adad;
+  --dark-font-color-secondary: #c9dcdc;
+  --dark-card-background: #113541;
+}
+
+.scrollbar {
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  scrollbar-width: thin;
+}
+.scrollbar::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 0.25rem;
+}
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.dark .scrollbar {
+  --scrollbar-thumb: #255461;
 }
