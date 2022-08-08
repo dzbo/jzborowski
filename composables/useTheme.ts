@@ -1,15 +1,14 @@
-import useBrowser from '@/composables/useBrowser'
+import useBrowser from './useBrowser'
 
 const loadTheme = () => {
   const { isBrowser } = useBrowser()
-  if (!isBrowser()) return
-
-  const localStorage = window.localStorage
+  if (!isBrowser()) {
+    return
+  }
 
   if (
-    localStorage.theme === 'dark' ||
-    (!('theme' in localStorage) &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches)
+    window.localStorage.getItem('theme') === 'dark' ||
+    window.matchMedia('(prefers-color-scheme: dark)').matches
   ) {
     document.documentElement.classList.add('dark')
   } else {
@@ -19,13 +18,15 @@ const loadTheme = () => {
 
 const switchTheme = () => {
   const { isBrowser } = useBrowser()
-  if (!isBrowser()) return
+  if (!isBrowser()) {
+    return
+  }
 
-  const localStorage = window.localStorage
   document.documentElement.classList.toggle('dark')
-  localStorage.theme = document.documentElement.classList.contains('dark')
-    ? 'dark'
-    : 'light'
+  window.localStorage.setItem(
+    'theme',
+    document.documentElement.classList.contains('dark') ? 'dark' : ''
+  )
 }
 
 export default function () {

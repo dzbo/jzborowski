@@ -6,4 +6,7 @@ export default defineConfig({
       external: ['vue-router'],
     },
   },
+  test: {
+    environment: 'jsdom',
+  },
 })
