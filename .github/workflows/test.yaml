@@ -9,7 +9,7 @@ on:
       - master
 env:
   cache_version: v1
-  node-version: 16.15.0
+  node-version: 16.16.0
 
 jobs:
   dependencies:
@@ -59,7 +59,7 @@ jobs:
         id: node-modules-cache
         with:
           path: ./node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-modules-${{ env.cache_version }}-${{ hashFiles('**/package-lock.json') }}
       - name: Lint
         run: npm run lint:eslint
   lint_format:
@@ -77,7 +77,7 @@ jobs:
         id: node-modules-cache
         with:
           path: ./node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-modules-${{ env.cache_version }}-${{ hashFiles('**/package-lock.json') }}
       - name: Lint format
         run: npm run lint:fmt
   lint_types:
@@ -95,7 +95,7 @@ jobs:
         id: node-modules-cache
         with:
           path: ./node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-modules-${{ env.cache_version }}-${{ hashFiles('**/package-lock.json') }}
       - name: Lint
         run: npm run lint:ts
   build:
@@ -115,7 +115,7 @@ jobs:
         id: node-modules-cache
         with:
           path: ./node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-modules-${{ env.cache_version }}-${{ hashFiles('**/package-lock.json') }}
       - name: Build app
         run: npm run build
   test_unit:
@@ -140,6 +140,6 @@ jobs:
         id: node-modules-cache
         with:
           path: ./node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-modules-${{ env.cache_version }}-${{ hashFiles('**/package-lock.json') }}
       - name: Run tests
         run: npm run test
