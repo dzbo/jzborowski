@@ -32,31 +32,29 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.node-version }}
-      - name: Set lockfile_hash
-        run: echo "lockfile_hash=${{ hashFiles('**/package-lock.json') }}" >> $GITHUB_ENV
-      - name: Restore node_modules cache
-        uses: actions/cache@v2
-        id: node-modules-cache
+      - name: Restore cache
+        uses: actions/cache@v3
         with:
-          path: ./node_modules
-          key: ${{ runner.os }}-node-modules-${{ env.cache_version }}-${{ env.lockfile_hash }}
-      - name: Get npm cache directory path
-        if: steps.node-modules-cache.outputs.cache-hit != 'true'
-        id: npm-cache-dir-path
-        run: echo "::set-output name=dir::~/.npm/_cacache"
-      - name: Restore npm cache
-        if: steps.node-modules-cache.outputs.cache-hit != 'true'
-        uses: actions/cache@v2
-        id: npm-cache
-        with:
-          path: ${{ steps.npm-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-npm-${{ env.cache_version }}-${{ env.lockfile_hash }}
-          restore-keys: ${{ runner.os }}-npm-${{ env.cache_version }}-
-      - run: npm run generate
+          path: |
+            dist
+            .nuxt
+          key: ${{ runner.os }}-nuxt-build-${{ hashFiles('dist') }}
+          restore-keys: |
+            ${{ runner.os }}-nuxt-build-
+      - name: Static HTML export with Nuxt
+        run: npm run generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./.output/public
+          path: ./dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
