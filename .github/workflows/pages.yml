@@ -51,10 +51,10 @@ jobs:
           key: ${{ runner.os }}-npm-${{ env.cache_version }}-${{ env.lockfile_hash }}
           restore-keys: ${{ runner.os }}-npm-${{ env.cache_version }}-
       - run: npm run generate
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./dist
+      # - name: Upload artifact
+      #   uses: actions/upload-pages-artifact@v1
+      #   with:
+      #     path: ./dist
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
