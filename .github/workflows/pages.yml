@@ -13,7 +13,9 @@ env:
   node-version: 16.16.0
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 # Allow one concurrent deployment
 concurrency:
