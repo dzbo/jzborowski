@@ -1,5 +1,7 @@
 # Jerzy Zborowski - Home page
 
+[![Test](https://github.com/dzbo/jzborowski/actions/workflows/test.yaml/badge.svg?branch=master)](https://github.com/dzbo/jzborowski/actions/workflows/test.yaml)
+
 ## Stack
 
 - [Nuxt 3](https://v3.nuxtjs.org)
