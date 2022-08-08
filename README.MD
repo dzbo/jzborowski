@@ -4,9 +4,10 @@
 
 ## Stack
 
-- [Nuxt 3](https://v3.nuxtjs.org)
+- [Vue 3](https://vuejs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Vite](https://vitejs.dev/)
+- [asdf](https://asdf-vm.com/)
 
 ## Setup
 
@@ -18,7 +19,7 @@ npm install
 
 ## Development Server
 
-Start the development server on http://localhost:3000
+Start the development server on http://127.0.0.1:5173/
 
 ```bash
 npm run dev
@@ -38,12 +39,16 @@ Locally preview production build:
 npm run preview
 ```
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
-
 ## Lint
 
 Lint check for formatting (Prettier), Typescript and Eslint.
 
 ```bash
 npm run lint
+```
+
+## Test
+
+```bash
+npm run test
 ```

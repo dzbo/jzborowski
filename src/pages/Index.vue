@@ -5,30 +5,30 @@ const numberOfImages = 37
 <template>
   <div>
     <section
-      class="grid grid-rows-1 lg:grid-cols-12 rounded-xl drop-shadow-lg mx-4 bg-white dark:bg-[color:var(--dark-card-background)] sm:m-auto sm:w-4/5 md:w-2/3"
+      class="mx-4 grid grid-rows-1 rounded-xl bg-white drop-shadow-lg dark:bg-[color:var(--dark-card-background)] sm:m-auto sm:w-4/5 md:w-2/3 lg:grid-cols-12"
     >
       <div
-        class="relative sm:col-span-6 lg:col-span-5 rounded-l-xl w-[100%] h-[500px] sm:h-[600px] lg:h-[100%]"
+        class="relative h-[500px] w-[100%] rounded-l-xl sm:col-span-6 sm:h-[600px] lg:col-span-5 lg:h-[100%]"
       >
         <div
-          class="rounded-l-xl bg-no-repeat bg-cover bg-[url('img/avatar.jpg')] grayscale w-[100%] h-[500px] sm:h-[600px] lg:h-[100%]"
+          class="h-[500px] w-[100%] rounded-l-xl bg-[url('img/avatar.jpg')] bg-cover bg-no-repeat grayscale sm:h-[600px] lg:h-[100%]"
         ></div>
         <div
-          class="absolute top-0 rounded-l-xl bg-gradient-to-r from-white dark:from-[color:var(--dark-card-background)] via-transparent dark:via-transparent to-white dark:to-[color:var(--dark-card-background)] w-[100%] h-[500px] sm:h-[600px] lg:h-[100%]"
+          class="absolute top-0 h-[500px] w-[100%] rounded-l-xl bg-gradient-to-r from-white via-transparent to-white dark:from-[color:var(--dark-card-background)] dark:via-transparent dark:to-[color:var(--dark-card-background)] sm:h-[600px] lg:h-[100%]"
         ></div>
       </div>
       <div
-        class="sm:col-span-6 lg:col-span-7 font-light p-7 leading-7 text-slate-500 dark:text-[color:var(--dark-font-color-primary)]"
+        class="p-7 font-light leading-7 text-slate-500 dark:text-[color:var(--dark-font-color-primary)] sm:col-span-6 lg:col-span-7"
       >
         Artysta malarz, urodzony 13.05.1957 r. zmarł w 2020 r. Należał do
         Związku Polskich Artystów Plastyków. Wystawa indywidualna rysunku i
         malarstwa w Klubie EMPiK w Częstochowie w 1987 r.
         <p
-          class="font-bold pt-6 pb-2 text-center text-black dark:text-[color:var(--dark-font-color-secondary)]"
+          class="pt-6 pb-2 text-center font-bold text-black dark:text-[color:var(--dark-font-color-secondary)]"
         >
           Wystawy zbiorowe:
         </p>
-        <ul class="list-disc ml-8">
+        <ul class="ml-8 list-disc">
           <li>
             III Wystawa Środowiska Częstochowskich Artysow Plastykow, Miejska
             Galeria Sztuki w Częstochowie, 1998 r.
@@ -53,11 +53,11 @@ const numberOfImages = 37
           </li>
         </ul>
         <p
-          class="font-bold pt-6 pb-2 text-black text-center dark:text-[color:var(--dark-font-color-secondary)]"
+          class="pt-6 pb-2 text-center font-bold text-black dark:text-[color:var(--dark-font-color-secondary)]"
         >
           Nagrody:
         </p>
-        <ul class="list-disc ml-8">
+        <ul class="ml-8 list-disc">
           <li>
             Ogólnopolski Konkurs im. J. Grabowskiego, Biuro Wystaw
             Artystycznych, Tarnów 1990 r.
@@ -70,20 +70,20 @@ const numberOfImages = 37
         </ul>
       </div>
     </section>
-    <section class="m-auto mt-8 mx-4 sm:m-auto sm:w-4/5 md:w-2/3">
+    <section class="m-auto mx-4 mt-8 sm:m-auto sm:w-4/5 md:w-2/3">
       <div
-        class="text-center font-logo text-5xl mb-8 mt-[80px] dark:text-[color:var(--dark-font-color-primary)]"
+        class="mb-8 mt-[80px] text-center font-logo text-5xl dark:text-[color:var(--dark-font-color-primary)]"
       >
         <span class="text-red-600">G</span>al<span class="text-blue-500">e</span
         >ri<span class="text-yellow-400">a</span>
       </div>
       <div
-        class="gap-8 sm:columns-1 md:columns-2 lg:columns-3 xl:columns-4 2xl-columns-5"
+        class="2xl-columns-5 gap-8 sm:columns-1 md:columns-2 lg:columns-3 xl:columns-4"
       >
         <img
           v-for="index in numberOfImages"
           :key="index"
-          class="w-full mb-6 rounded-md drop-shadow-lg"
+          class="mb-6 w-full rounded-md drop-shadow-lg"
           :src="`img/gallery/${index}.jpg`"
         />
       </div>

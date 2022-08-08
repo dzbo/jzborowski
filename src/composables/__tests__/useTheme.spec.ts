@@ -5,16 +5,14 @@ import useTheme from '../useTheme'
 const mockMatches = vi.fn()
 const mockSetItem = vi.fn()
 const mockGetItem = vi.fn()
-window = {
-  matchMedia: () =>
-    ({
-      matches: mockMatches(),
-    } as MediaQueryList),
-  localStorage: {
-    setItem: () => mockSetItem(),
-    getItem: () => mockGetItem(),
-  },
-} as any
+window.matchMedia = () =>
+  ({
+    matches: mockMatches(),
+  } as MediaQueryList)
+window.localStorage = {
+  setItem: () => mockSetItem(),
+  getItem: () => mockGetItem(),
+} as unknown as Storage
 
 afterEach(() => {
   vi.resetAllMocks()

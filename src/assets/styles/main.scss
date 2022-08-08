@@ -13,17 +13,18 @@
 .scrollbar {
   scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
   scrollbar-width: thin;
-}
-.scrollbar::-webkit-scrollbar-track {
-  background-color: var(--scrollbar-track);
-}
-.scrollbar::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb);
-  border-radius: 0.25rem;
-}
-.scrollbar::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 0.25rem;
+  }
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
 }
 .dark .scrollbar {
   --scrollbar-thumb: #255461;

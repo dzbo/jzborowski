@@ -1,11 +1,4 @@
-import useBrowser from './useBrowser'
-
 const loadTheme = () => {
-  const { isBrowser } = useBrowser()
-  if (!isBrowser()) {
-    return
-  }
-
   if (
     window.localStorage.getItem('theme') === 'dark' ||
     window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -17,11 +10,6 @@ const loadTheme = () => {
 }
 
 const switchTheme = () => {
-  const { isBrowser } = useBrowser()
-  if (!isBrowser()) {
-    return
-  }
-
   document.documentElement.classList.toggle('dark')
   window.localStorage.setItem(
     'theme',

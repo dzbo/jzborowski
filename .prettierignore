@@ -14,5 +14,4 @@ tsconfig.json
 .eslintrc
 package-lock.json
 .output
-.nuxt
 coverage

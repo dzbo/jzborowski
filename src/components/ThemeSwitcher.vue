@@ -13,7 +13,7 @@ const { switchTheme } = useTheme()
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="w-6 h-6"
+        class="h-6 w-6"
       >
         <path
           d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
@@ -24,7 +24,7 @@ const { switchTheme } = useTheme()
           class="stroke-sky-500"
         ></path></svg></span
     ><span class="hidden dark:inline"
-      ><svg viewBox="0 0 24 24" fill="none" class="w-6 h-6">
+      ><svg viewBox="0 0 24 24" fill="none" class="h-6 w-6">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
