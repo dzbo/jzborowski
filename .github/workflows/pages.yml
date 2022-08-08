@@ -50,10 +50,11 @@ jobs:
           path: ${{ steps.npm-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-npm-${{ env.cache_version }}-${{ env.lockfile_hash }}
           restore-keys: ${{ runner.os }}-npm-${{ env.cache_version }}-
-      - run: npm run generate
-      - name: deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          path: ./dist
+      - run: npm run generate
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
