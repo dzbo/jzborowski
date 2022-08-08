@@ -50,13 +50,6 @@ jobs:
           path: ${{ steps.npm-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-npm-${{ env.cache_version }}-${{ env.lockfile_hash }}
           restore-keys: ${{ runner.os }}-npm-${{ env.cache_version }}-
-
-  # Deployment job
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - run: npm run generate
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
