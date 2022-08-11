@@ -1,6 +1,6 @@
 /* eslint no-global-assign: 0 */
 import { afterEach, expect, test, vi } from 'vitest'
-import useTheme from '../useTheme'
+import useTheme from '@/composables/useTheme'
 
 const mockMatches = vi.fn()
 const mockSetItem = vi.fn()
