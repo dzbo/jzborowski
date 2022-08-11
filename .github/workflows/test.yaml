@@ -3,10 +3,10 @@ name: Test
 on:
   pull_request:
     branches:
-      - master
+      - main
   push:
     branches:
-      - master
+      - main
 env:
   cache_version: v1
   node-version: 16.16.0
