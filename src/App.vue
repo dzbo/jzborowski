@@ -6,6 +6,10 @@ import PagesIndex from './pages/Index.vue'
 
 const { loadTheme } = useTheme()
 loadTheme()
+
+setTimeout(() => {
+  document.body.scrollTop = document.documentElement.scrollTop = 0
+}, 100)
 </script>
 
 <template>

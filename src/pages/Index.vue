@@ -1,5 +1,17 @@
 <script setup lang="ts">
-const numberOfImages = 52
+import useImageLazyLoad from '@/composables/useImageLazyLoad'
+import { onMounted, ref } from 'vue'
+import { useMediaQuery } from '@vueuse/core'
+
+const numberOfImages = ref(52)
+const { loadImages } = useImageLazyLoad()
+const isMobile = useMediaQuery('(max-width: 768px)')
+
+onMounted(() => {
+  if (isMobile) {
+    loadImages()
+  }
+})
 </script>
 
 <template>
@@ -83,8 +95,8 @@ const numberOfImages = 52
         <img
           v-for="index in numberOfImages"
           :key="index"
-          class="mb-6 w-full rounded-md drop-shadow-lg"
-          :src="`/img/gallery/${numberOfImages + 1 - index}.jpg`"
+          class="mb-6 w-full rounded-md opacity-0 drop-shadow-lg transition-opacity duration-500"
+          :data-src="`/img/gallery/${numberOfImages + 1 - index}.jpg`"
         />
       </div>
     </section>
