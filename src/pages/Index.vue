@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const numberOfImages = 37
+const numberOfImages = 52
 </script>
 
 <template>
@@ -20,9 +20,9 @@ const numberOfImages = 37
       <div
         class="p-7 font-light leading-7 text-slate-500 dark:text-[color:var(--dark-font-color-primary)] sm:col-span-6 lg:col-span-7"
       >
-        Artysta malarz, urodzony 13.05.1957 r. zmarł w 2020 r. Należał do
-        Związku Polskich Artystów Plastyków. Wystawa indywidualna rysunku i
-        malarstwa w Klubie EMPiK w Częstochowie w 1987 r.
+        Artysta malarz, urodzony w 1957 r. zmarł w 2020 r. Należał do Związku
+        Polskich Artystów Plastyków. Wystawa indywidualna rysunku i malarstwa w
+        Klubie EMPiK w Częstochowie w 1987 r.
         <p
           class="pt-6 pb-2 text-center font-bold text-black dark:text-[color:var(--dark-font-color-secondary)]"
         >
@@ -84,7 +84,7 @@ const numberOfImages = 37
           v-for="index in numberOfImages"
           :key="index"
           class="mb-6 w-full rounded-md drop-shadow-lg"
-          :src="`/img/gallery/${index}.jpg`"
+          :src="`/img/gallery/${numberOfImages + 1 - index}.jpg`"
         />
       </div>
     </section>
