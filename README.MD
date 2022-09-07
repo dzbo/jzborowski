@@ -54,3 +54,7 @@ npm run lint
 ```bash
 npm run test
 ```
+
+## Publish
+
+Push to `main` branch and [Github action](https://github.com/dzbo/jzborowski/actions/workflows/pages.yml) will deploy to [Github Pages](https://pages.github.com).
