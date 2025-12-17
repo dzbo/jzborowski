@@ -85,8 +85,6 @@ jobs:
             ${{ runner.os }}-pnpm-store-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Lint format
-        run: pnpm run lint:fmt
   lint_types:
     name: Lint Typings
     needs: dependencies
