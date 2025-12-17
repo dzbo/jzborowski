@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 coverage
+.claude
+
+# pnpm
+.pnpm-store
 
 # Editor directories and files
 .vscode/*

@@ -9,14 +9,15 @@ https://www.jerzyzborowski.pl/
 - [Vue 3](https://vuejs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Vite](https://vitejs.dev/)
-- [asdf](https://asdf-vm.com/)
+- [mise](https://mise.jdx.dev/)
+- [pnpm](https://pnpm.io/)
 
 ## Setup
 
 Make sure to install the dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 ## Development Server
@@ -24,7 +25,7 @@ npm install
 Start the development server on http://127.0.0.1:5173/
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 ## Production
@@ -32,13 +33,13 @@ npm run dev
 Build the application for production:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 Locally preview production build:
 
 ```bash
-npm run preview
+pnpm run preview
 ```
 
 ## Lint
@@ -46,13 +47,13 @@ npm run preview
 Lint check for formatting (Prettier), Typescript and Eslint.
 
 ```bash
-npm run lint
+pnpm run lint
 ```
 
 ## Test
 
 ```bash
-npm run test
+pnpm run test
 ```
 
 ## Publish
