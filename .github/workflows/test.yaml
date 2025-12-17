@@ -9,7 +9,7 @@ on:
       - main
 env:
   cache_version: v1
-  node-version: 16.16.0
+  node-version: 22
 
 jobs:
   dependencies:
@@ -17,87 +17,100 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ env.node-version }}
-      - name: Set lockfile_hash
-        run: echo "lockfile_hash=${{ hashFiles('**/package-lock.json') }}" >> $GITHUB_ENV
-      - name: Restore node_modules cache
-        uses: actions/cache@v2
-        id: node-modules-cache
+      - name: Get pnpm store directory
+        shell: bash
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
         with:
-          path: ./node_modules
-          key: ${{ runner.os }}-node-modules-${{ env.cache_version }}-${{ env.lockfile_hash }}
-      - name: Get npm cache directory path
-        if: steps.node-modules-cache.outputs.cache-hit != 'true'
-        id: npm-cache-dir-path
-        run: echo "::set-output name=dir::~/.npm/_cacache"
-      - name: Restore npm cache
-        if: steps.node-modules-cache.outputs.cache-hit != 'true'
-        uses: actions/cache@v2
-        id: npm-cache
-        with:
-          path: ${{ steps.npm-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-npm-${{ env.cache_version }}-${{ env.lockfile_hash }}
-          restore-keys: ${{ runner.os }}-npm-${{ env.cache_version }}-
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
       - name: Install dependencies
-        if: steps.node-modules-cache.outputs.cache-hit != 'true'
-        run: npm ci
+        run: pnpm install --frozen-lockfile
   lint_scripts:
     name: Lint JavaScript
     needs: dependencies
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ env.node-version }}
-      - name: Restore node_modules cache
-        uses: actions/cache@v2
-        id: node-modules-cache
+      - name: Get pnpm store directory
+        shell: bash
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
         with:
-          path: ./node_modules
-          key: ${{ runner.os }}-node-modules-${{ env.cache_version }}-${{ hashFiles('**/package-lock.json') }}
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
       - name: Lint
-        run: npm run lint:eslint
+        run: pnpm run lint:eslint
   lint_format:
     name: Lint Formatting
     needs: dependencies
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ env.node-version }}
-      - name: Restore node_modules cache
-        uses: actions/cache@v2
-        id: node-modules-cache
+      - name: Get pnpm store directory
+        shell: bash
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
         with:
-          path: ./node_modules
-          key: ${{ runner.os }}-node-modules-${{ env.cache_version }}-${{ hashFiles('**/package-lock.json') }}
-      - name: Lint format
-        run: npm run lint:fmt
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
   lint_types:
     name: Lint Typings
     needs: dependencies
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ env.node-version }}
-      - name: Restore node_modules cache
-        uses: actions/cache@v2
-        id: node-modules-cache
+      - name: Get pnpm store directory
+        shell: bash
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
         with:
-          path: ./node_modules
-          key: ${{ runner.os }}-node-modules-${{ env.cache_version }}-${{ hashFiles('**/package-lock.json') }}
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
       - name: Lint
-        run: npm run lint:ts
+        run: pnpm run lint:ts
   build:
     name: Build application
     needs:
@@ -106,18 +119,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ env.node-version }}
-      - name: Restore node_modules cache
-        uses: actions/cache@v2
-        id: node-modules-cache
+      - name: Get pnpm store directory
+        shell: bash
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
         with:
-          path: ./node_modules
-          key: ${{ runner.os }}-node-modules-${{ env.cache_version }}-${{ hashFiles('**/package-lock.json') }}
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
       - name: Build app
-        run: npm run build
+        run: pnpm run build
   test_unit:
     name: Unit Tests
     needs:
@@ -131,15 +152,23 @@ jobs:
       test-results: ${{ steps.status.outputs.test-results }}
     steps:
       - uses: actions/checkout@v2
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ env.node-version }}
-      - name: Restore node_modules cache
-        uses: actions/cache@v2
-        id: node-modules-cache
+      - name: Get pnpm store directory
+        shell: bash
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
         with:
-          path: ./node_modules
-          key: ${{ runner.os }}-node-modules-${{ env.cache_version }}-${{ hashFiles('**/package-lock.json') }}
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
       - name: Run tests
-        run: npm run test
+        run: pnpm run test

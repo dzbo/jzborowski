@@ -8,7 +8,7 @@ const mockGetItem = vi.fn()
 window.matchMedia = () =>
   ({
     matches: mockMatches(),
-  } as MediaQueryList)
+  }) as MediaQueryList
 window.localStorage = {
   setItem: () => mockSetItem(),
   getItem: () => mockGetItem(),

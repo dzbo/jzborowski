@@ -18,7 +18,7 @@ const preloadImage = (img: HTMLImageElement) => {
 
 const loadImages = () => {
   const images = document.querySelectorAll(
-    '[data-src]'
+    '[data-src]',
   ) as NodeListOf<HTMLImageElement>
 
   images.forEach((img) => {
@@ -34,7 +34,7 @@ const loadImages = () => {
           }
         })
       },
-      imgOptions
+      imgOptions,
     )
   })
 }

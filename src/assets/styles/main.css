@@ -1,6 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-dark-font-primary: #92adad;
+  --color-dark-font-secondary: #c9dcdc;
+  --color-dark-card-background: #113541;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-logo: 'Square Peg', sans-serif;
+}
+
+@variant dark {
+  &:where(.dark, .dark *) {
+    @slot;
+  }
+}
 
 :root {
   --scrollbar-thumb: #d1d1d2;
