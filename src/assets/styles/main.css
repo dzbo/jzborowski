@@ -4,6 +4,9 @@
   --color-dark-font-primary: #92adad;
   --color-dark-font-secondary: #c9dcdc;
   --color-dark-card-background: #113541;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-logo: 'Square Peg', sans-serif;
 }
 
 @variant dark {

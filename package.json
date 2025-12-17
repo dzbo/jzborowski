@@ -15,6 +15,7 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
+    "@formatjs/intl": "4.0.2",
     "@vueuse/core": "14.1.0",
     "vue": "^3.5.25"
   },
