@@ -13,7 +13,7 @@ const switchTheme = () => {
   document.documentElement.classList.toggle('dark')
   window.localStorage.setItem(
     'theme',
-    document.documentElement.classList.contains('dark') ? 'dark' : ''
+    document.documentElement.classList.contains('dark') ? 'dark' : '',
   )
 }
 

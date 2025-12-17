@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import useImageLazyLoad from '@/composables/useImageLazyLoad'
-import { onMounted, ref } from 'vue'
-import { useMediaQuery } from '@vueuse/core'
+import { useMediaQuery } from "@vueuse/core";
+import { onMounted, ref } from "vue";
+import useImageLazyLoad from "@/composables/useImageLazyLoad";
 
-const numberOfImages = ref(52)
-const { loadImages } = useImageLazyLoad()
-const isMobile = useMediaQuery('(max-width: 768px)')
+const numberOfImages = ref(52);
+const { loadImages } = useImageLazyLoad();
+const isMobile = useMediaQuery("(max-width: 768px)");
 
 onMounted(() => {
   if (isMobile) {
-    loadImages()
+    loadImages();
   }
-})
+});
 </script>
 
 <template>
@@ -24,10 +24,10 @@ onMounted(() => {
       >
         <div
           class="h-[500px] w-[100%] rounded-l-xl bg-[url('/img/avatar.jpg')] bg-cover bg-no-repeat grayscale sm:h-[600px] lg:h-[100%]"
-        ></div>
+        />
         <div
           class="absolute top-0 h-[500px] w-[100%] rounded-l-xl bg-gradient-to-r from-white via-transparent to-white dark:from-[color:var(--dark-card-background)] dark:via-transparent dark:to-[color:var(--dark-card-background)] sm:h-[600px] lg:h-[100%]"
-        ></div>
+        />
       </div>
       <div
         class="p-7 font-light leading-7 text-slate-500 dark:text-[color:var(--dark-font-color-primary)] sm:col-span-6 lg:col-span-7"
@@ -86,8 +86,7 @@ onMounted(() => {
       <div
         class="mb-8 mt-[80px] text-center font-logo text-5xl dark:text-[color:var(--dark-font-color-primary)]"
       >
-        <span class="text-red-600">G</span>al<span class="text-blue-500">e</span
-        >ri<span class="text-yellow-400">a</span>
+        <span class="text-red-600">G</span>al<span class="text-blue-500">e</span>ri<span class="text-yellow-400">a</span>
       </div>
       <div
         class="2xl-columns-5 gap-8 sm:columns-1 md:columns-2 lg:columns-3 xl:columns-4"
@@ -97,7 +96,7 @@ onMounted(() => {
           :key="index"
           class="mb-6 w-full rounded-md opacity-0 drop-shadow-lg transition-opacity duration-500"
           :data-src="`/img/gallery/${numberOfImages + 1 - index}.jpg`"
-        />
+        >
       </div>
     </section>
   </div>

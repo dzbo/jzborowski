@@ -12,8 +12,7 @@ import ThemeSwitcher from '@/components/ThemeSwitcher.vue'
       <div
         class="font-logo text-7xl dark:text-[color:var(--dark-font-color-primary)]"
       >
-        <span class="text-red-600">M</span>al<span class="text-blue-500">a</span
-        >rs<span class="text-yellow-400">t</span>wo
+        <span class="text-red-600">M</span>al<span class="text-blue-500">a</span>rs<span class="text-yellow-400">t</span>wo
       </div>
       <div
         class="text-sm font-light uppercase text-slate-600 dark:text-[color:var(--dark-font-color-primary)]"

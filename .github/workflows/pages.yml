@@ -10,7 +10,7 @@ on:
 
 env:
   cache_version: v1
-  node-version: 20
+  node-version: 22
 
 permissions:
   contents: read
